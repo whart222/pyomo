@@ -303,6 +303,28 @@ def generate_standard_repn(expr, idMap=None, compute_values=True, verbose=False,
             repn.linear_vars = (expr,)
             return repn
         #
+        # The expression is linear with numeric coefs
+        #
+        # Could make this even faster if we know that there are no fixed variables
+        #
+        elif expr.__class__ is EXPR.X_LinearExpression:
+            repn.constant = expr.constant
+            #linear_coefs = {}
+            for c,v in zip(expr.linear_coefs, expr.linear_vars):
+                id_ = id(v)
+                if not id_ in idMap[None]:
+                    key = len(idMap) - 1
+                    idMap[None][id_] = key
+                    idMap[key] = v
+                else:
+                    key = idMap[None][id_]
+                #linear_coefs[key] = c
+            #keys = list(linear_coefs.keys())
+            repn.linear_vars = tuple(expr.linear_vars)
+            repn.linear_coefs = tuple(expr.linear_coefs)
+            repn.constant = expr.constant
+            return repn
+        #
         # The expression is linear
         #
         elif expr.__class__ is EXPR.LinearExpression:
