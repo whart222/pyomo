@@ -18,6 +18,7 @@ from pyutilib.enum import Enum
 #
 # pyomo - A pyomo.core.PyomoModel object, or a *.py file that defines such an object
 # cpxlp - A CPLEX LP file
+# poeklp - A POEK LP file
 # nl - AMPL *.nl file
 # mps - A free-format MPS file
 # mod - AMPL *.mod file
@@ -31,7 +32,7 @@ from pyutilib.enum import Enum
 # bar - A Baron input file
 # gams - A GAMS input file
 #
-ProblemFormat = Enum('colin', 'pyomo', 'cpxlp', 'nl', 'mps', 'mod', 'lpxlp', 'osil', 'colin_optproblem', 'FuncDesigner','bar','gams')
+ProblemFormat = Enum('colin', 'pyomo', 'cpxlp', 'poeklp', 'nl', 'mps', 'mod', 'lpxlp', 'osil', 'colin_optproblem', 'FuncDesigner','bar','gams')
 
 #
 # osrl - osrl XML file defined by the COIN-OR OS project: Result
