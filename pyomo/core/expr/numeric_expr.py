@@ -1542,6 +1542,9 @@ class LinearExpression(ExpressionBase):
         return self
 
 
+class X_LinearExpression(LinearExpression):
+    __slots__ = ()
+
 class _MutableLinearExpression(LinearExpression):
     __slots__ = ()
 
