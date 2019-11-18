@@ -13,9 +13,11 @@
 #
 
 import logging
+from pyomo.opt import ProblemFormat
 from pyomo.opt.base import AbstractProblemWriter, WriterFactory
 try:
     import poek
+    import poek.util
     poek_available=True
 except ImportError:
     poek_available=False
@@ -27,7 +29,7 @@ class ProblemWriter_poeklp(AbstractProblemWriter):
 
     def __init__(self):
 
-        AbstractProblemWriter.__init__(self, ProblemFormat.cpxlp)
+        AbstractProblemWriter.__init__(self, ProblemFormat.poeklp)
 
         # The LP writer tracks which variables are
         # referenced in constraints, so that a user does not end up with a
@@ -50,8 +52,11 @@ class ProblemWriter_poeklp(AbstractProblemWriter):
                 "ProblemWriter_cpxlp passed unrecognized io_options:\n\t" +
                 "\n\t".join("%s = %s" % (k,v) for k,v in iteritems(io_options)))
 
-        poek = pyomo_to_poek(model, self._referenced_variable_ids)
-        poek.write(output_filename)
+        poek_model = poek.util.pyomo_to_poek(model)
+        fname = output_filename[:-6]+"lp"
+        poek_model.write(fname)
+
+        return (fname, {})
 
 
 if poek_available:

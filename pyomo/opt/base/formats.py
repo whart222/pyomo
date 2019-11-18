@@ -53,6 +53,7 @@ def guess_format(filename):
     formats['mps']=ProblemFormat.mps
     formats['mod']=ProblemFormat.mod
     formats['lp']=ProblemFormat.cpxlp
+    formats['poeklp']=ProblemFormat.poeklp
     formats['osil']=ProblemFormat.osil
     formats['gms']=ProblemFormat.gams
     formats['gams']=ProblemFormat.gams
@@ -69,3 +70,4 @@ def guess_format(filename):
         return formats.get(filename.split('.')[-1].strip(), None)
     else:
         return None
+
