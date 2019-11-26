@@ -15,4 +15,5 @@ def load():
     import pyomo.repn.plugins.mps
     import pyomo.repn.plugins.gams_writer
     import pyomo.repn.plugins.poeklp
+    import pyomo.repn.plugins.poeknl
 

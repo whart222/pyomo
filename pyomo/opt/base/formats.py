@@ -19,6 +19,7 @@ from pyutilib.enum import Enum
 # pyomo - A pyomo.core.PyomoModel object, or a *.py file that defines such an object
 # cpxlp - A CPLEX LP file
 # poeklp - A POEK LP file
+# poeknl - A POEK NL file
 # nl - AMPL *.nl file
 # mps - A free-format MPS file
 # mod - AMPL *.mod file
@@ -32,7 +33,7 @@ from pyutilib.enum import Enum
 # bar - A Baron input file
 # gams - A GAMS input file
 #
-ProblemFormat = Enum('colin', 'pyomo', 'cpxlp', 'poeklp', 'nl', 'mps', 'mod', 'lpxlp', 'osil', 'colin_optproblem', 'FuncDesigner','bar','gams')
+ProblemFormat = Enum('colin', 'pyomo', 'cpxlp', 'poeklp', 'poeknl', 'nl', 'mps', 'mod', 'lpxlp', 'osil', 'colin_optproblem', 'FuncDesigner','bar','gams')
 
 #
 # osrl - osrl XML file defined by the COIN-OR OS project: Result
@@ -54,6 +55,7 @@ def guess_format(filename):
     formats['mod']=ProblemFormat.mod
     formats['lp']=ProblemFormat.cpxlp
     formats['poeklp']=ProblemFormat.poeklp
+    formats['poeknl']=ProblemFormat.poeknl
     formats['osil']=ProblemFormat.osil
     formats['gms']=ProblemFormat.gams
     formats['gams']=ProblemFormat.gams
