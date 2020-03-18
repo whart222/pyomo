@@ -1,3 +1,6 @@
+NOTE: This PR resolves an issue related to how numpy recognizes arguments for its numeric operations.  Bill thinks that this PR works, but that it doesn't fully resolve the issues that relate to whether numpy data
+is usable within Pyomo models.
+
 [![Build Status](https://travis-ci.org/Pyomo/pyomo.svg?branch=master)](https://travis-ci.org/Pyomo/pyomo)
 [![Build status](https://ci.appveyor.com/api/projects/status/km08tbkv05ik14n9/branch/master?svg=true)](https://ci.appveyor.com/project/WilliamHart/pyomo/branch/master)
 [![codecov](https://codecov.io/gh/Pyomo/pyomo/branch/master/graph/badge.svg)](https://codecov.io/gh/Pyomo/pyomo)
