@@ -1,3 +1,7 @@
+NOTE: This branch concerns Issue #567, which concerns whether Pyomo can use LP writers without sorting.
+This may be deprecated after the new set component is defined.  But for now we're leaving this 
+branch as is.
+
 [![Build Status](https://travis-ci.org/Pyomo/pyomo.svg?branch=master)](https://travis-ci.org/Pyomo/pyomo)
 [![Build status](https://ci.appveyor.com/api/projects/status/km08tbkv05ik14n9/branch/master?svg=true)](https://ci.appveyor.com/project/WilliamHart/pyomo/branch/master)
 [![codecov](https://codecov.io/gh/Pyomo/pyomo/branch/master/graph/badge.svg)](https://codecov.io/gh/Pyomo/pyomo)
