@@ -1,3 +1,7 @@
+NOTE: This branch creates a new class for linear expressions that have floating point coefficients.  This
+allows for some performance optimization above and beyond the use of the LinearExpression object
+in pyomo.
+
 <!--[![Travis Status](https://travis-ci.org/Pyomo/pyomo.svg?branch=master)](https://travis-ci.org/Pyomo/pyomo)-->
 [![Travis Status](https://img.shields.io/travis/Pyomo/pyomo.svg?logo=travis)](https://travis-ci.org/Pyomo/pyomo)
 [![Appveyor Status](https://ci.appveyor.com/api/projects/status/km08tbkv05ik14n9/branch/master?svg=true)](https://ci.appveyor.com/project/WilliamHart/pyomo/branch/master)
