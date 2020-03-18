@@ -1,3 +1,7 @@
+NOTE: This branch includes a draft for how to limit the names used in component attributes.  I think 
+this is generally a good idea, and I've seen users get upset when they couldn't access attribute
+names normally.  But the dev team hasn't agreed to limit names.
+
 [![Build Status](https://travis-ci.org/Pyomo/pyomo.svg?branch=master)](https://travis-ci.org/Pyomo/pyomo)
 [![Build status](https://ci.appveyor.com/api/projects/status/km08tbkv05ik14n9/branch/master?svg=true)](https://ci.appveyor.com/project/WilliamHart/pyomo/branch/master)
 [![codecov](https://codecov.io/gh/Pyomo/pyomo/branch/master/graph/badge.svg)](https://codecov.io/gh/Pyomo/pyomo)
