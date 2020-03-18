@@ -1,3 +1,7 @@
+NOTE: This branch takes a stab at reworking Constraint() to include the functionality of ConstraintList.
+Issue #1348 suggests that this is a general issue for Pyomo's design that should be reconsidered.
+
+
 [![Build Status](https://travis-ci.org/Pyomo/pyomo.svg?branch=master)](https://travis-ci.org/Pyomo/pyomo)
 [![Build status](https://ci.appveyor.com/api/projects/status/km08tbkv05ik14n9/branch/master?svg=true)](https://ci.appveyor.com/project/WilliamHart/pyomo/branch/master)
 [![codecov](https://codecov.io/gh/Pyomo/pyomo/branch/master/graph/badge.svg)](https://codecov.io/gh/Pyomo/pyomo)
