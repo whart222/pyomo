@@ -134,7 +134,6 @@ class ProblemWriter_json(AbstractProblemWriter):
                 skip_trivial_constraints=skip_trivial_constraints,
                 file_determinism=file_determinism,
                 include_all_variable_bounds=include_all_variable_bounds)
-        #print(json.dumps(model_dict, indent=2))
         with open(filename,"w") as f:
             json.dump(model_dict, f, indent=2)
 
@@ -437,7 +436,11 @@ class ProblemWriter_json(AbstractProblemWriter):
 
         data['var'] = []
         v = data['var']
-        for i in sorted(self._varID[i] for i in used_vars):
+        if file_determinism >= 1:
+            varids = sorted(self._varID[i] for i in used_vars)
+        else:
+            varids = set(self._varID[i] for i in used_vars)
+        for i in varids:
             tmp = {}
             v_ = Vars_dict[i]
             if symbolic_solver_labels:
@@ -462,7 +465,11 @@ class ProblemWriter_json(AbstractProblemWriter):
 
         data['param'] = []
         p = data['param']
-        for i in sorted(self._paramID[i] for i in used_params):
+        if file_determinism >= 1:
+            paramids = sorted(self._paramID[i] for i in used_params)
+        else:
+            paramids = set(self._paramID[i] for i in used_params)
+        for i in paramids:
             tmp = {}
             p_ = Params_dict[i]
             if symbolic_solver_labels:
