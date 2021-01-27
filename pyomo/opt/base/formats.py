@@ -44,6 +44,7 @@ class ProblemFormat(str, enum.Enum):
     FuncDesigner='FuncDesigner'
     bar='bar'
     gams='gams'
+    json='json'
     
     # Overloading __str__ is needed to match the behavior of the old
     # pyutilib.enum class (removed June 2020). There are spots in the
@@ -90,14 +91,15 @@ def guess_format(filename):
     formats['osil']=ProblemFormat.osil
     formats['gms']=ProblemFormat.gams
     formats['gams']=ProblemFormat.gams
+    formats['json']=ProblemFormat.json
 
     formats['sol']=ResultsFormat.sol
     formats['osrl']=ResultsFormat.osrl
     formats['soln']=ResultsFormat.soln
     formats['yml']=ResultsFormat.yaml
     formats['yaml']=ResultsFormat.yaml
-    formats['jsn']=ResultsFormat.json
-    formats['json']=ResultsFormat.json
+    #formats['jsn']=ResultsFormat.json
+    #formats['json']=ResultsFormat.json
     formats['results']=ResultsFormat.yaml
     if filename:
         return formats.get(filename.split('.')[-1].strip(), None)
