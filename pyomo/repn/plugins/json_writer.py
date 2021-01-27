@@ -8,11 +8,27 @@
 #  This software is distributed under the 3-clause BSD License.
 #  ___________________________________________________________________________
 
+__all__ = ['ProblemWriter_json']
+
 #
 # JSON Problem Writer Plugin
 #
+"""
+The goal of this format is to enable rapid serialization of Pyomo models
+capturing information about the mutable parameters and fixed variables
+in the model.  Additionally, this format uses JSON to enable robust
+parsing with standard techniques.
 
-__all__ = ['ProblemWriter_json']
+Note that this format does not do some of the reformulation that is
+done with serialization formats like LP or NL, where linear or quadratic 
+structure is identified.  Instead, the assumption is that the solver
+interface would analyze the model expressions in a manner that is best
+suited for their analysis.
+
+This formulation expresses objective and constraint expressions in a
+compact expression tree.  However, this uses a comma-separated format
+that is relatively easy to read.
+"""
 
 try:
     basestring
