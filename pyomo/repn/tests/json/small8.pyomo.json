@@ -1,0 +1,56 @@
+{
+  "cfg": {
+    "symbolic_solver_labels": 1,
+    "skip_trivial_constraints": 0,
+    "file_determinism": 3,
+    "include_all_variable_bounds": 0
+  },
+  "obj": [
+    {
+      "expr": "sum,3,V,2,*,V,0,V,0,V,1",
+      "min": true,
+      "label": "obj"
+    }
+  ],
+  "con": [
+    {
+      "expr": "*,V,1,V,1",
+      "label": "constr",
+      "geq": 2.0
+    },
+    {
+      "expr": "+,V,1,*,N,-0.5,V,0",
+      "label": "constr2",
+      "leq": 0.0
+    },
+    {
+      "expr": "+,V,2,neg,+,V,1,N,2.0",
+      "label": "constr3",
+      "leq": 0.0
+    }
+  ],
+  "var": [
+    {
+      "label": "x",
+      "id": 0,
+      "lb": 0,
+      "type": "R",
+      "fixed": 0
+    },
+    {
+      "label": "y",
+      "id": 1,
+      "lb": 0,
+      "type": "R",
+      "fixed": 0
+    },
+    {
+      "label": "z",
+      "id": 2,
+      "lb": 7,
+      "type": "R",
+      "fixed": 0
+    }
+  ],
+  "param": []
+}
