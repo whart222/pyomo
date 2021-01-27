@@ -72,7 +72,7 @@ logger = logging.getLogger('pyomo.core')
 
 
 @WriterFactory.register('json', 'Generate a JSON file that represents the problem.')
-class ProblemWriter_nl(AbstractProblemWriter):
+class ProblemWriter_json(AbstractProblemWriter):
 
     def __init__(self):
         AbstractProblemWriter.__init__(self, ProblemFormat.json)
